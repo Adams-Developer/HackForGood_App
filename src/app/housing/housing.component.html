@@ -1,0 +1,42 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Housing"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+	<ScrollView #scrollView (scroll)="onScroll($event, scrollView, topView)">
+		<StackLayout>
+			<StackLayout #topView height="250" style="background-image: url('https://i.ibb.co/8DfkB5Y/house-1407562-1280.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+				<!-- this is the header for collapsing --->
+				<!-- Note: this can be any type of layout you want -->
+				<Label text="" color="purple" textAlignment="center" fontSize="36" marginTop="40"></Label>
+			</StackLayout>
+			<StackLayout width="100%" backgroundColor="white" padding="10">
+				<!--Add your page content here-->
+				<Label textWrap="true" text="Housing Services" class="h2 description-label"></Label>
+				<Label textWrap="true" class="p-10" text="Deborah’s Place offers permanent supportive housing for women in all three of our locations.Participants have private residences, sign leases and pay rent based on income, although rent can be waived in cases where a resident has no income. Unlike shelters, there is no time limit for length of residency in these programs as long as a participant still qualifies for services. All three permanent housing programs are staffed 24 hours a day, 7 days a week."></Label>
+				<Label textWrap="true" text="Rebecca Johnson Apartments" class="h2 description-label"></Label>
+				<Label textWrap="true" text="East Garfield Park" class="h4 description-label"></Label>
+				<Label textWrap="true" class="p-10" text="The Rebecca Johnson Apartments mark the end of homelessness for 90 women who reside in studio apartments. Half of these units are designated for women with disabilities.    																																										 Rebecca Johnson, a former participant, personified the struggles, spirit, defeats and victories of the women Deborah’s Place serves. She was one of the first women of Deborah’s Place to move into housing. She maintained that housing from 1990 until her death in December of 1997. We believe that naming the apartments after Rebecca Johnson is a fitting tribute to her determination and perseverance."></Label>
+				<Label textWrap="true" text="Interim Housing" class="h2 description-label"></Label>
+				<Label textWrap="true" text="Teresa's Interim Housing" class="h2 description-label"></Label>
+				<Label textWrap="true" text="Old Town" class="h4 description-label"></Label>
+				<Label textWrap="true" class="p-10" text="Teresa’s Interim Housing is a ten-bed, 120-day interim housing program providing a safe, structured community. Women and staff work together to meet goals such as stable housing, employment, family reunification, and improved health. 																																									
+
+The interim housing program of Deborah’s Place was named for Teresa Neuman. Teresa was a former participant of Marah’s and a member of the Board of Directors of Deborah’s Place. She was very involved in the planning of the building at 1530 N. Sedgwick. Teresa died in 1994 after a struggle with cancer. Board and staff felt that naming this program for her was a fitting tribute to her strength and leadership."></Label>			
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+</GridLayout>

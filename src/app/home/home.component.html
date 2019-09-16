@@ -1,0 +1,44 @@
+
+
+<!-- <FlexboxLayout class="page">
+    <StackLayout class="form">
+        <Image class="logo" src="https://i.ibb.co/DQZpmNd/Deborahs-Place-300x224.png"></Image>
+    </StackLayout>
+    <StackLayout>
+        <Label textWrap="true" text="Openning Doors Of Opportunity" class="h2 description-label"></Label>
+        <Label textWrap="true" class="p-10" text="Deborah’s Place opens doors of opportunity for women who are homeless in Chicago. Supportive housing and services offer women their key to healing, achieving their goals and moving on from the experience of homelessness."></Label>
+    </StackLayout>
+</FlexboxLayout> -->
+
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Welcome"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+	<ScrollView #scrollView (scroll)="onScroll($event, scrollView, topView)">
+		<StackLayout>
+			<StackLayout #topView height="250" style="background-image: url('https://i.ibb.co/DQZpmNd/Deborahs-Place-300x224.png'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+				<Label text="" color="purple" textAlignment="center" fontSize="36" marginTop="40"></Label>
+			</StackLayout>
+			<StackLayout width="100%" backgroundColor="white" padding="10">
+				<Label textWrap="true" text="Deborah's Place" class="h2 description-label"></Label>
+                <Label textWrap="true" class="p-10" text="Welcome to our new app!"></Label>
+                <Label textWrap="true" class="p-10" text="Deborah's Place opens doors of opportunity for women who are homeless in Chicago. Supportive housing and services offer women their key to healing, achieving their goals and moving on from the experience of homelessness."></Label>
+                <Label textWrap="true" class="p-10" text="After more than 30 years, Deborah’s Place has helped over 4,000 women move from homeless to housed, from surviving to living."></Label>                
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+</GridLayout>

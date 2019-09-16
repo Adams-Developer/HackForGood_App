@@ -1,0 +1,37 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Farmers Market's & More"></Label>
+</ActionBar>
+
+<GridLayout tkExampleTitle tkToggleNavButton>
+    <RadListView [items]="items" marginRight="-2" backgroundColor="#e6e6e6"
+        (itemLoading)="onItemLoading($event)">
+        <ListViewStaggeredLayout tkListViewLayout scrollDirection="Vertical"
+            spanCount="2"></ListViewStaggeredLayout>
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout margin="15" borderRadius="10">
+                <Image src="{{ item.imageSrc }}" width="200" height="120"
+                    stretch="aspectFill"></Image>
+                <!-- <HtmlView html="{{ item.locationLink }}"></HtmlView> -->
+                <StackLayout backgroundColor="white" padding="10">
+                    <Label text="{{ item.name }}" class="item-name" textWrap="true"></Label>
+                    <Label text="{{ item.desc }}" class="item-desc" textWrap="true"></Label>
+                    <Label text="{{ item.time }}" class="item-time"></Label>
+                    <Label text="{{ item.price }}" class="item-price"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</GridLayout>

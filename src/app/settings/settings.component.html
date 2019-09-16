@@ -1,0 +1,40 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Contact Us"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout>
+        <GridLayout rows="*, *, *, *, *" columns="80, *" class="form">
+            <Label row="0" col="0" text="To:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="0" col="1" [(ngModel)]="toEmail" hint="to email address(es)"
+                class="input input-border" keyboardType="email"></TextField>
+            <Label row="1" col="0" text="From:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="1" col="1" [(ngModel)]="name" hint="first name, last name"
+                class="input input-border"></TextField>
+            <Label row="3" col="0" text="Subject:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="3" col="1" [(ngModel)]="subject" hint="subject"
+                class="input input-border"></TextField>
+            <Label row="4" col="0" text="Message:" horizontalAlignment="right"
+                class="label"></Label>
+            <TextField row="4" col="1" [(ngModel)]="message" hint="message"
+                class="input input-border"></TextField>
+        </GridLayout>
+        <Button text="Send Email" (tap)="onEmailSend($event)" class="btn btn-primary"></Button>
+    </StackLayout>
+</ScrollView>
