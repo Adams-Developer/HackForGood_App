@@ -6,8 +6,7 @@ import * as app from "tns-core-modules/application";
 @Component({
     selector: "TrainingEducation",
     moduleId: module.id,
-    templateUrl: "./detail.component.html",
-    styleUrls: ['./detail.component.css']
+    templateUrl: "./detail.component.html"
 })
 export class DetailComponent implements OnInit {
     selected = {};
