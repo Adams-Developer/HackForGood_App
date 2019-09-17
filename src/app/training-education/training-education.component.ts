@@ -8,8 +8,7 @@ import * as app from "tns-core-modules/application";
 @Component({
     selector: "TrainingEducation",
     moduleId: module.id,
-    templateUrl: "./training-education.component.html",
-    styleUrls: ['./training-education.component.css']
+    templateUrl: "./training-education.component.html"
 })
 export class TrainingEducationComponent implements OnInit {
     

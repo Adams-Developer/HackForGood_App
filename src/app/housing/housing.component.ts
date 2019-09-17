@@ -11,8 +11,7 @@ import { screen } from 'tns-core-modules/platform';
 @Component({
     selector: "Housing",
     moduleId: module.id,
-    templateUrl: "./housing.component.html",
-    styleUrls: ['./housing.component.css']
+    templateUrl: "./housing.component.html"
 })
 export class HousingComponent implements OnInit {
 

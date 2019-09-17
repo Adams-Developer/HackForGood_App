@@ -6,8 +6,7 @@ import * as email from "nativescript-email";
 @Component({
     selector: "Settings",
     moduleId: module.id,
-    templateUrl: "./settings.component.html",
-    styleUrls:['./settings.component.css']
+    templateUrl: "./settings.component.html"
 })
 export class SettingsComponent implements OnInit {
 
